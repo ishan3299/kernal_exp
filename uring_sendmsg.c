@@ -1,4 +1,4 @@
-Since commit 0fa03c624d8f ("io_uring: add support for sendmsg()", first in v5.3),
+/* Since commit 0fa03c624d8f ("io_uring: add support for sendmsg()", first in v5.3),
 io_uring has support for asynchronously calling sendmsg().
 Unprivileged userspace tasks can submit IORING_OP_SENDMSG submission queue
 entries, which cause sendmsg() to be called either in syscall context in the
@@ -29,7 +29,8 @@ Here's a reproducer for Linux 5.3 that demonstrates the issue by adding an
 IPv4 address to the loopback interface without having the required privileges
 for that:
 
-==========================================================================
+//==========================================================================
+*/
 $ cat uring_sendmsg.c 
 #define _GNU_SOURCE
 #include <pthread.h>
