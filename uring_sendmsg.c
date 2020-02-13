@@ -186,7 +186,7 @@ $ ip addr show dev lo
     inet6 ::1/128 scope host 
        valid_lft forever preferred_lft forever
 $ 
-==========================================================================
+/*==========================================================================
 
 The way I see it, the easiest way to fix this would probably be to grab a
 reference to the caller's credentials with get_current_cred() in
@@ -205,3 +205,4 @@ way to v5.1, when io_uring was added - I think e.g. the SELinux hook that is
 called from rw_verify_area() has so far always attributed all the I/O operations
 to the kernel context, which isn't really a security problem, but might e.g.
 cause unexpected denials depending on the SELinux policy.
+*/
